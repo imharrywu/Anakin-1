@@ -33,6 +33,7 @@
 
 # dir
 build
+/x86_build/
 android_build
 nv_gpu_build
 ios_build

@@ -24,7 +24,7 @@ include(ExternalProject)
 
 set(MKLML_PROJECT       "extern_mklml")#
 set(MKLML_VER           "mklml_lnx_2019.0.3.20190220")# for vnni mklml_lnx_2019.0.3.20190125
-set(MKLML_URL           "https://github.com/intel/mkl-dnn/releases/download/v0.18/${MKLML_VER}.tgz") # original site
+set(MKLML_URL           "file:///opt/repos/${MKLML_VER}.tgz") # original site
 set(MKLML_SOURCE_DIR    "${ANAKIN_TEMP_THIRD_PARTY_PATH}/mklml")
 set(MKLML_DOWNLOAD_DIR  "${MKLML_SOURCE_DIR}/src/${MKLML_PROJECT}")
 set(MKLML_DST_DIR       ".")
@@ -48,7 +48,7 @@ ExternalProject_Add(
     ${EXTERNAL_PROJECT_LOG_ARGS}
     PREFIX                ${MKLML_SOURCE_DIR}
     DOWNLOAD_DIR          ${MKLML_DOWNLOAD_DIR}
-    DOWNLOAD_COMMAND      wget --no-check-certificate ${MKLML_URL} -c -O ${MKLML_VER}.tgz
+    DOWNLOAD_COMMAND      curl -kL ${MKLML_URL} -o ${MKLML_VER}.tgz
     && tar -zxf ${MKLML_VER}.tgz -C ${MKLML_DOWNLOAD_DIR}
     UPDATE_COMMAND        ""
     PATCH_COMMAND            ""

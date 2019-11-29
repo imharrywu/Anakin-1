@@ -38,7 +38,7 @@ ExternalProject_Add(
     ${XBYAK_PROJECT}
     ${EXTERNAL_PROJECT_LOG_ARGS}
     DEPENDS             ""
-    GIT_REPOSITORY      "https://github.com/herumi/xbyak.git"
+    GIT_REPOSITORY      "/opt/repos/xbyak"
     GIT_TAG             "v5.661"  # Jul 26th
     PREFIX              ${XBYAK_PREFIX_DIR}/src
     UPDATE_COMMAND      ""
